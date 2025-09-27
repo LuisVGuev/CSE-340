@@ -8,13 +8,15 @@
       <%- include('../partials/navigation') %>
 
       <main id="home-content">
-        <%- body %>
-      </main>
+  <%- body %>
+</main>
 
-      <main id="vehicle-content" style="display:none;">
-        <h2 id="category-title"></h2>
-        <div id="vehicle-list" class="vehicle-grid"></div>
-      </main>
+
+<section id="vehicle-content" style="display:none;">
+  <h2 id="category-title" aria-live="polite"></h2>
+  <div id="vehicle-list" class="vehicle-grid"></div>
+</section>
+
 
       <%- include('../partials/footer') %>
     </div>
