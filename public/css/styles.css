@@ -131,28 +131,58 @@ nav ul li a:hover { background-color: #00a0d6; color: #fff; }
 .reviews li { margin-bottom: .5rem; }
 
 
-/*  vehicles */
-/* Vehicle Grid */
+/* ===== Vehicle Grid ===== */
 .vehicle-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-  gap: 1rem;
-  margin-top: 1rem;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
 }
 
 .vehicle-card {
   background: #fff;
   border: 1px solid #ddd;
-  border-radius: 8px;
-  padding: 0.5rem;
+  border-radius: 10px;
+  padding: 1rem;
   text-align: center;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.vehicle-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
 }
 
 .vehicle-card img {
   width: 100%;
-  height: auto;
-  border-radius: 4px;
+  height: 150px;
+  object-fit: cover; /* 🔑 recorta en proporción para que no se deformen */
+  border-radius: 6px;
+  margin-bottom: 0.5rem;
 }
+
+.vehicle-card h2 {
+  font-size: 1.1rem;
+  margin: 0.5rem 0;
+}
+
+.vehicle-card h2 a {
+  text-decoration: none;
+  color: #00a0d6;
+}
+
+.vehicle-card h2 a:hover {
+  text-decoration: underline;
+}
+
+.vehicle-card p {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #333;
+  margin-top: 0.3rem;
+}
+
 
 /* Footer */
 footer {

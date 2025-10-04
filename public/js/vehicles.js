@@ -1,4 +1,3 @@
-
 const vehicles = [
   // ---------- CUSTOM ----------
   { name: 'Batmobile Custom', category: 'custom', price: 65000, img: '/images/vehicles/batmobile.jpg' },
