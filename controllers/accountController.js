@@ -4,9 +4,9 @@ const jwt = require("jsonwebtoken");
 const accountModel = require("../models/account-model");
 const utilities = require("../utilities");
 
-// ================================
-// Renderiza la vista de login
-// ================================
+
+// Render view login
+
 async function buildLogin(req, res, next) {
   try {
     const nav = await utilities.getNav();
@@ -22,9 +22,9 @@ async function buildLogin(req, res, next) {
   }
 }
 
-// ================================
-// Renderiza la vista de registro
-// ================================
+
+// Render view account
+
 async function buildRegister(req, res, next) {
   try {
     const nav = await utilities.getNav();
@@ -42,9 +42,9 @@ async function buildRegister(req, res, next) {
   }
 }
 
-// ================================
-// Registra una nueva cuenta
-// ================================
+
+// New account
+
 async function registerAccount(req, res, next) {
   try {
     const nav = await utilities.getNav();
@@ -95,14 +95,14 @@ async function registerAccount(req, res, next) {
   }
 }
 
-// ================================
-// Procesa el login del usuario
-// ================================
+
+// Login process account
+
 async function loginAccount(req, res, next) {
   try {
     const nav = await utilities.getNav();
 
-    // Protegemos para evitar error si no se envía el email
+
     const emailRaw = req.body.account_email || "";
     const email = emailRaw.trim().toLowerCase();
     const password = req.body.account_password;
@@ -152,9 +152,9 @@ async function loginAccount(req, res, next) {
   }
 }
 
-// ================================
-// Vista principal de cuenta (dashboard)
-// ================================
+
+// dashboard update view
+
 async function buildAccountManagement(req, res, next) {
   try {
     const nav = await utilities.getNav();
@@ -180,9 +180,9 @@ async function buildAccountManagement(req, res, next) {
   }
 }
 
-// ================================
-// Renderiza vista para actualizar cuenta
-// ================================
+
+// Account updata view
+
 async function getUpdateView(req, res, next) {
   try {
     const account = await accountModel.getAccountById(req.params.id);
@@ -197,9 +197,9 @@ async function getUpdateView(req, res, next) {
   }
 }
 
-// ================================
-// Actualiza datos generales
-// ================================
+
+// Update data
+
 async function updateAccountInfo(req, res, next) {
   try {
     const { account_id, firstname, lastname, email } = req.body;
@@ -217,9 +217,7 @@ async function updateAccountInfo(req, res, next) {
   }
 }
 
-// ================================
-// Actualiza contraseña
-// ================================
+// Password Update
 async function updatePassword(req, res, next) {
   try {
     const { account_id, password } = req.body;
@@ -238,9 +236,7 @@ async function updatePassword(req, res, next) {
   }
 }
 
-// ================================
-// Cierra sesión
-// ================================
+// logout
 function logoutAccount(req, res) {
   res.clearCookie("jwt");
   req.flash("notice", "You have been logged out.");

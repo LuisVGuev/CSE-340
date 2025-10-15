@@ -3,10 +3,10 @@ const router = express.Router();
 
 const utilities = require("../utilities/index");
 const accountController = require("../controllers/accountController");
-const validator = require("../validation/account-validation"); // Validaciones personalizadas
+const validator = require("../validation/account-validation"); 
 
 /* ========================
- * Account Routes
+ * the Routes
  ======================== */
 
 // GET views
@@ -14,7 +14,7 @@ router.get("/login", utilities.handleErrors(accountController.buildLogin));
 router.get("/register", utilities.handleErrors(accountController.buildRegister));
 router.get("/logout", accountController.logoutAccount);
 
-// Dashboard - gestión de cuenta
+// Dashboard to manage account 
 router.get("/", utilities.handleErrors(accountController.buildAccountManagement));
 
 // POST actions

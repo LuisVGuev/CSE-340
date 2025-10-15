@@ -1,7 +1,7 @@
 const { body } = require('express-validator');
 const accountModel = require('../models/account-model');
 
-// Validación para email (registro)
+// Validate email account
 const emailValidation = body('account_email')
   .trim()
   .isEmail()
@@ -15,7 +15,7 @@ const emailValidation = body('account_email')
     return true;
   });
 
-// Validaciones para actualizar información de cuenta
+// update validation email account
 const updateAccountValidation = [
   body('firstname')
     .trim()
@@ -32,7 +32,7 @@ const updateAccountValidation = [
     .normalizeEmail(),
 ];
 
-// Validación para actualización de contraseña
+// Validate update pasword
 const passwordValidation = body('password')
   .isLength({ min: 8 })
   .withMessage('Password must be at least 8 characters long.');

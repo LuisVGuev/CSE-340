@@ -18,7 +18,7 @@ async function registerAccount(account_firstname, account_lastname, account_emai
       account_password,
     ]);
     
-    return result; // 👈 esto es importante
+    return result;
   } catch (error) {
     console.error("registerAccount model error: ", error);
     return null;
@@ -42,7 +42,7 @@ async function checkExistingEmail(account_email) {
 }
 
 /* *****************************
- * Get account by email (for login)
+ * Get account by email for login
  * *************************** */
 async function getAccountByEmail(account_email) {
   try {
@@ -61,8 +61,8 @@ async function getAccountByEmail(account_email) {
 }
 
 
-/* *****************************
- * Get account by ID (for account management view)
+/* ****************************
+ * Get account by ID 
  * *************************** */
 async function getAccountById(account_id) {
   try {
@@ -79,7 +79,7 @@ async function getAccountById(account_id) {
 }
 
 /* *****************************
- * Update account info (name, email)
+ * Update account info like the name, email
  * *************************** */
 async function updateAccount(id, firstname, lastname, email) {
   try {
