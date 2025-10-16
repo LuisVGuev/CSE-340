@@ -1,18 +1,20 @@
 
-  <h1>Account Management</h1>
+<h1>Account Management</h1>
 
-  <!-- Welcome -->
-  <h2>Welcome, <%= accountData.account_firstname %>!</h2>
+<!-- Welcome -->
+<h2>Welcome, <%= accountData.account_firstname %>!</h2>
 
-  <!-- Link update -->
-  <a href="/account/update/<%= accountData.account_id %>">Update Account Info</a>
+<!-- Links to update info and password -->
+<p><a href="/account/update-info/<%= accountData.account_id %>">Update Account Info</a></p>
+<p><a href="/account/update-password/<%= accountData.account_id %>">Update Password</a></p>
 
-  <!-- link logout-->
-  <p><a href="/account/logout">Logout</a></p>
+<!-- Link logout -->
+<p><a href="/account/logout">Logout</a></p>
 
-  <!-- link inventory -->
-  <% if (accountData.account_type === "Employee" || accountData.account_type === "Admin") { %>
-    <h3>Inventory Management</h3>
-    <p><a href="/inv">Go to Inventory Management</a></p>
-  <% } %>
+<!-- Inventory Management, only for Employee or Admin -->
+<% if (accountData.account_type === "Employee" || accountData.account_type === "Admin") { %>
+  <h3>Inventory Management</h3>
+  <p><a href="/inv">Go to Inventory Management</a></p>
+<% } %>
+
 

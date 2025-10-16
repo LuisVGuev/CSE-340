@@ -23,6 +23,22 @@ router.post("/login", utilities.handleErrors(accountController.loginAccount));
 router.post("/update-info", validator.updateAccountValidation, utilities.handleErrors(accountController.updateAccountInfo));
 router.post("/update-password", validator.passwordValidation, utilities.handleErrors(accountController.updatePassword));
 
+router.get('/update/:id', utilities.handleErrors(accountController.getUpdateView));
+
+router.get("/update-info", utilities.handleErrors(accountController.buildUpdateInfo));
+router.get("/update-password", utilities.handleErrors(accountController.buildUpdatePassword));
+router.get('/account/password', utilities.handleErrors(accountController.buildPasswordUpdateForm));
+
+const checkAdmin = require('../middleware/checkAdmin');
+
+router.get('/update-info/:id', utilities.handleErrors(accountController.getUpdateView)); 
+router.post('/update-info', validator.updateAccountValidation, utilities.handleErrors(accountController.updateAccountInfo));
+
+router.get('/update-password/:id', utilities.handleErrors(accountController.buildPasswordUpdateForm));
+router.post('/update-password', validator.passwordValidation, utilities.handleErrors(accountController.updatePassword));
+router.get('/update-password/:id', accountController.buildPasswordUpdateForm);
+
+
 module.exports = router;
 
 

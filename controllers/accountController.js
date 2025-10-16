@@ -64,11 +64,15 @@ async function registerAccount(req, res, next) {
 
     const hashedPassword = await bcrypt.hash(req.body.account_password, 10);
 
+    // Default account type is 'client' - no admin 
+    const accountType = 'client';
+
     const regResult = await accountModel.registerAccount(
       req.body.account_firstname,
       req.body.account_lastname,
       req.body.account_email,
-      hashedPassword
+      hashedPassword,
+      accountType
     );
 
     if (regResult?.rowCount === 1) {
@@ -94,6 +98,7 @@ async function registerAccount(req, res, next) {
     next(error);
   }
 }
+
 
 
 // Login process account
@@ -217,6 +222,7 @@ async function updateAccountInfo(req, res, next) {
   }
 }
 
+
 // Password Update
 async function updatePassword(req, res, next) {
   try {
@@ -236,6 +242,24 @@ async function updatePassword(req, res, next) {
   }
 }
 
+//buildPasswordUpdateForm
+async function buildPasswordUpdateForm(req, res, next) {
+  try {
+    const nav = await utilities.getNav();
+    res.render('account/update-password', {
+      title: 'Change Password',
+      nav,
+      errors: null,
+      notice: req.flash('notice'),   
+      account: { account_id: req.params.id }  
+    });
+  } catch (error) {
+    next(error);
+  }
+}
+
+
+
 // logout
 function logoutAccount(req, res) {
   res.clearCookie("jwt");
@@ -253,5 +277,6 @@ module.exports = {
   updatePassword,
   loginAccount,
   logoutAccount,
+  buildPasswordUpdateForm,
 };
 

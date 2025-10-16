@@ -1,11 +1,11 @@
-/* ===== Reset & Box Model ===== */
+/*  Reset & Box Model  */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* ===== Base ===== */
+/*  Base  */
 body {
   font-family: Arial, Helvetica, sans-serif;
   color: #333;
@@ -28,52 +28,49 @@ body {
   border: 0;
 }
 
-/* ===== Form container Contact & Forms ===== */
-form {
-  max-width: 500px;
+/*  Login Form Styles  */
+form#loginForm {
+  max-width: 400px;
   margin: 20px auto;
-  padding: 20px;
-  background: #56f7cf;
-  border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  border: 1px solid #ccc;
-  background-color: #f9f9f9;
-  max-width: 400px; 
   padding: 15px;
+  background-color: #f9f9f9;
   border-radius: 5px;
+  border: 1.5px solid #3a3636;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-form label {
+form#loginForm label {
   display: block;
   margin-bottom: 8px;
   font-weight: 600;
   color: #333;
 }
 
-form input[type="text"],
-form input[type="email"],
-form input[type="password"],
-textarea {
+form#loginForm input[type="text"],
+form#loginForm input[type="email"],
+form#loginForm input[type="password"],
+form#loginForm textarea {
   width: 100%;
   padding: 10px;
   margin-bottom: 16px;
-  border: 1.5px solid #ccc;
+  border: 1.5px solid #0e0d0d;
   border-radius: 4px;
   font-size: 1rem;
   box-sizing: border-box;
   transition: border-color 0.3s ease;
 }
 
-form input[type="text"]:focus,
-form input[type="email"]:focus,
-form input[type="password"]:focus,
-textarea:focus {
+form#loginForm input[type="text"]:focus,
+form#loginForm input[type="email"]:focus,
+form#loginForm input[type="password"]:focus,
+form#loginForm textarea:focus {
   border-color: #007BFF;
   outline: none;
+  border: 1.5px solid #0e0d0d;
 }
 
-form button,
-button[type="submit"] {
+form#loginForm button,
+form#loginForm button[type="submit"] {
   display: inline-block;
   background-color: #007BFF;
   color: white;
@@ -85,51 +82,241 @@ button[type="submit"] {
   transition: background-color 0.3s ease;
 }
 
-form button:hover,
-button[type="submit"]:hover {
+form#loginForm button:hover,
+form#loginForm button[type="submit"]:hover {
   background-color: #0056b3;
 }
 
-/* ===== Success, Error & Flash Messages ===== */
-.success,
-.flash-message.success {
-  background-color: #d4edda;
-  color: #155724;
-  padding: 12px 20px;
-  margin-bottom: 16px;
-  border: 1px solid #c3e6cb;
-  border-radius: 4px;
+/*  Register Form Styles  */
+form#registerForm {
+  max-width: 450px;
+  margin: 25px auto;
+  padding: 20px;
+  background-color: #54e7c7;
+  border-radius: 10px;
+  border: 1.5px solid #242221;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.3);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-.error,
-.flash-message.error {
-  background-color: #f8d7da;
-  color: #721c24;
-  padding: 12px 20px;
-  margin-bottom: 16px;
-  border: 1px solid #f5c6cb;
-  border-radius: 4px;
-}
-
-.error {
-  color: red;
-  font-size: 0.9rem;
+form#registerForm label {
+  display: block;
   margin-bottom: 10px;
+  font-weight: 700;
+  color: #020202;
 }
 
-.flash-message {
+form#registerForm input[type="text"],
+form#registerForm input[type="email"],
+form#registerForm input[type="password"],
+form#registerForm textarea {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 18px;
+  border: 1.5px solid #000000;
+  border-radius: 6px;
+  font-size: 1rem;
+  box-sizing: border-box;
+  transition: border-color 0.3s ease;
+}
+
+form#registerForm input[type="text"]:focus,
+form#registerForm input[type="email"]:focus,
+form#registerForm input[type="password"]:focus,
+form#registerForm textarea:focus {
+  border-color: #030303;
+  outline: none;
+}
+
+form#registerForm button,
+form#registerForm button[type="submit"] {
+  display: inline-block;
+  background-color: #2894d3;
+  color: white;
+  padding: 14px 28px;
+  font-size: 1.1rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+form#registerForm button:hover,
+form#registerForm button[type="submit"]:hover {
+  background-color: #007fd3;
+}
+
+
+/*  Contact Form Styles  */
+form#contactForm {
+  max-width: 500px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #48e4cf;
+  border-radius: 8px;
+  border: 1.5px solid #3a3636;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+form#contactForm label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+  color: #333;
+}
+
+form#contactForm input[type="text"],
+form#contactForm input[type="email"],
+form#contactForm input[type="password"],
+form#contactForm textarea {
+  width: 100%;
   padding: 10px;
-  margin-bottom: 15px;
+  margin-bottom: 16px;
+  border: 1.5px solid #0e0d0d;
+  border-radius: 4px;
+  font-size: 1rem;
+  box-sizing: border-box;
+  transition: border-color 0.3s ease;
+}
+
+form#contactForm input[type="text"]:focus,
+form#contactForm input[type="email"]:focus,
+form#contactForm input[type="password"]:focus,
+form#contactForm textarea:focus {
+  border-color: #007BFF;
+  outline: none;
+  border: 1.5px solid #0e0d0d;
+}
+
+form#contactForm button,
+form#contactForm button[type="submit"] {
+  display: inline-block;
+  background-color: #28a745;
+  color: white;
+  padding: 12px 24px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+form#contactForm button:hover,
+form#contactForm button[type="submit"]:hover {
+  background-color: #1e7e34;
+}
+
+/*  Info Form Update Styles  */
+form#infoFormUpdate {
+  max-width: 450px;
+  margin: 30px auto;
+  padding: 25px;
+  background-color: #e8f0fe;
+  border-radius: 8px;
+  border: 1.8px solid #3a6ef8;
+  box-shadow: 0 0 12px rgba(58, 110, 248, 0.25);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+form#infoFormUpdate label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+  color: #1a3c9f;
+}
+
+form#infoFormUpdate input[type="text"],
+form#infoFormUpdate input[type="email"],
+form#infoFormUpdate input[type="password"] {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 18px;
+  border: 1.5px solid #1a3c9f;
   border-radius: 5px;
-  text-align: center;
+  font-size: 1rem;
+  box-sizing: border-box;
+  transition: border-color 0.3s ease;
 }
 
-.flash-message.info {
-  background-color: #d9edf7;
-  color: #31708f;
+form#infoFormUpdate input[type="text"]:focus,
+form#infoFormUpdate input[type="email"]:focus,
+form#infoFormUpdate input[type="password"]:focus {
+  border-color: #0047d5;
+  outline: none;
 }
 
-/* ===== Wrapper ===== */
+form#infoFormUpdate button,
+form#infoFormUpdate button[type="submit"] {
+  display: inline-block;
+  background-color: #3a6ef8;
+  color: white;
+  padding: 14px 26px;
+  font-size: 1.05rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+form#infoFormUpdate button:hover,
+form#infoFormUpdate button[type="submit"]:hover {
+  background-color: #244ec9;
+}
+
+/*  Update Password Form Styles  */
+form#formUpdatePassword {
+  max-width: 400px;
+  margin: 30px auto;
+  padding: 20px;
+  background-color: #f0f4f8;
+  border-radius: 8px;
+  border: 1.5px solid #5a6770;
+  box-shadow: 0 0 8px rgba(90, 103, 112, 0.3);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+form#formUpdatePassword label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+  color: #37474f;
+}
+
+form#formUpdatePassword input[type="password"] {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 16px;
+  border: 1.5px solid #37474f;
+  border-radius: 5px;
+  font-size: 1rem;
+  box-sizing: border-box;
+  transition: border-color 0.3s ease;
+}
+
+form#formUpdatePassword input[type="password"]:focus {
+  border-color: #1e88e5;
+  outline: none;
+}
+
+form#formUpdatePassword button,
+form#formUpdatePassword button[type="submit"] {
+  display: inline-block;
+  background-color: #1e88e5;
+  color: white;
+  padding: 12px 26px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+form#formUpdatePassword button:hover,
+form#formUpdatePassword button[type="submit"]:hover {
+  background-color: #1565c0;
+}
+
+/*  Wrapper  */
 #wrapper {
   max-width: 960px;
   width: 100%;
@@ -138,7 +325,7 @@ button[type="submit"]:hover {
   box-shadow: 0 0 10px rgba(0,0,0,0.25);
 }
 
-/* ===== Header ===== */
+/*  Header  */
 header {
   display: flex;
   justify-content: space-between;
@@ -157,7 +344,7 @@ header a {
   text-decoration: none;
 }
 
-/* ===== Navigation ===== */
+/*  Navigation  */
 nav {
   background-color: #1e1d29;
 }
@@ -185,7 +372,7 @@ nav ul li a:hover {
   color: #fff;
 }
 
-/* ===== HERO ===== */
+/*  HERO  */
 .hero {
   position: relative;
   margin: 1rem 0;
@@ -246,7 +433,7 @@ nav ul li a:hover {
   background-color: #007a9e;
 }
 
-/* ===== Inventory Management ===== */
+/*  Inventory Management  */
 .management-options {
   margin: 2rem 0;
   text-align: center;
@@ -274,7 +461,7 @@ nav ul li a:hover {
   background-color: #007a9e;
 }
 
-/* ===== Vehicle Detail ===== */
+/*  Vehicle Detail  */
 .vehicle-detail,
 .vehicle-detail-container {
   margin: 2rem 0;
@@ -330,7 +517,7 @@ nav ul li a:hover {
   }
 }
 
-/* ===== Delorean Section ===== */
+/*  Delorean Section  */
 .delorean-section {
   margin-top: 2rem;
   display: grid;
@@ -372,7 +559,7 @@ nav ul li a:hover {
   margin-bottom: 0.5rem;
 }
 
-/* ===== Vehicle Grid ===== */
+/*  Vehicle Grid  */
 .vehicle-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
@@ -420,7 +607,7 @@ nav ul li a:hover {
   margin-top: auto; 
 }
 
-/* ===== Footer ===== */
+/*  Footer  */
 footer {
   margin-top: 2rem;
   font-size: 0.8rem;
@@ -428,7 +615,7 @@ footer {
   color: #555;
 }
 
-/* ===== Login Styles ===== */
+/*  Login Styles  */
 .login-container {
   background-color: #08b2b8;
   width: 350px;
@@ -490,7 +677,7 @@ footer {
   color: #ddd;
 }
 
-/* ===== Responsive rules ===== */
+/*  Responsive rules  */
 @media (max-width: 768px) {
   nav ul li a {
     padding: 0.6rem 1rem;
@@ -528,7 +715,7 @@ footer {
   }
 }
 
-/* ===== Extra small screens (phones) ===== */
+/*  Extra small screens (phones)  */
 @media (max-width: 480px) {
   .hero {
     display: flex;
