@@ -1,0 +1,28 @@
+
+
+<h1>Contacts Messages</h1>
+
+<% if (messages.length === 0) { %>
+  <p>There no messages.</p>
+<% } else { %>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Message</th>
+        <th>Date</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% messages.forEach(msg => { %>
+        <tr>
+          <td><%= msg.name %></td>
+          <td><%= msg.email %></td>
+          <td><%= msg.message %></td>
+          <td><%= new Date(msg.created_at).toLocaleString() %></td>
+        </tr>
+      <% }) %>
+    </tbody>
+  </table>
+<% } %>

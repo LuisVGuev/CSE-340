@@ -28,6 +28,106 @@ body {
   border: 0;
 }
 
+/* ===== Form container Contact & Forms ===== */
+form {
+  max-width: 500px;
+  margin: 20px auto;
+  padding: 20px;
+  background: #56f7cf;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border: 1px solid #ccc;
+  background-color: #f9f9f9;
+  max-width: 400px; 
+  padding: 15px;
+  border-radius: 5px;
+}
+
+form label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+  color: #333;
+}
+
+form input[type="text"],
+form input[type="email"],
+form input[type="password"],
+textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 16px;
+  border: 1.5px solid #ccc;
+  border-radius: 4px;
+  font-size: 1rem;
+  box-sizing: border-box;
+  transition: border-color 0.3s ease;
+}
+
+form input[type="text"]:focus,
+form input[type="email"]:focus,
+form input[type="password"]:focus,
+textarea:focus {
+  border-color: #007BFF;
+  outline: none;
+}
+
+form button,
+button[type="submit"] {
+  display: inline-block;
+  background-color: #007BFF;
+  color: white;
+  padding: 12px 24px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+form button:hover,
+button[type="submit"]:hover {
+  background-color: #0056b3;
+}
+
+/* ===== Success, Error & Flash Messages ===== */
+.success,
+.flash-message.success {
+  background-color: #d4edda;
+  color: #155724;
+  padding: 12px 20px;
+  margin-bottom: 16px;
+  border: 1px solid #c3e6cb;
+  border-radius: 4px;
+}
+
+.error,
+.flash-message.error {
+  background-color: #f8d7da;
+  color: #721c24;
+  padding: 12px 20px;
+  margin-bottom: 16px;
+  border: 1px solid #f5c6cb;
+  border-radius: 4px;
+}
+
+.error {
+  color: red;
+  font-size: 0.9rem;
+  margin-bottom: 10px;
+}
+
+.flash-message {
+  padding: 10px;
+  margin-bottom: 15px;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.flash-message.info {
+  background-color: #d9edf7;
+  color: #31708f;
+}
 
 /* ===== Wrapper ===== */
 #wrapper {
@@ -85,7 +185,7 @@ nav ul li a:hover {
   color: #fff;
 }
 
-/* ===== HERO: overlay on image (single, unified rules) ===== */
+/* ===== HERO ===== */
 .hero {
   position: relative;
   margin: 1rem 0;
@@ -100,7 +200,6 @@ nav ul li a:hover {
   border-radius: 4px;
 }
 
-/* Overlay box with title, features and button */
 .hero-text {
   position: absolute;
   top: 18%;
@@ -131,7 +230,6 @@ nav ul li a:hover {
   color: #333;
 }
 
-/* Own Today button inside overlay */
 .hero-text .btn-own {
   display: inline-block;
   margin-top: 0.6rem;
@@ -176,8 +274,9 @@ nav ul li a:hover {
   background-color: #007a9e;
 }
 
-/* ===== Vehicle Detail Page ===== */
-.vehicle-detail {
+/* ===== Vehicle Detail ===== */
+.vehicle-detail,
+.vehicle-detail-container {
   margin: 2rem 0;
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -185,47 +284,7 @@ nav ul li a:hover {
   align-items: start;
 }
 
-.vehicle-detail img {
-  width: 100%;
-  border-radius: 8px;
-  border: 1px solid #ddd;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-}
-
-.vehicle-info h2 {
-  font-size: 1.8rem;
-  margin-bottom: 0.4rem;
-  color: #00a0d6;
-}
-
-.vehicle-info p {
-  margin-bottom: 0.5rem;
-  font-size: 1rem;
-}
-
-.vehicle-info strong {
-  color: #222;
-}
-
-/* Responsive vehicle detail layout */
-@media (max-width: 768px) {
-  .vehicle-detail {
-    grid-template-columns: 1fr;
-  }
-  .vehicle-info {
-    text-align: center;
-  }
-}
-
-/* ===== Vehicle Detail ===== */
-.vehicle-detail-container {
-  margin-top: 2rem;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 2rem;
-  align-items: start;
-}
-
+.vehicle-detail img,
 .vehicle-detail-container img {
   width: 100%;
   border-radius: 8px;
@@ -233,31 +292,45 @@ nav ul li a:hover {
   box-shadow: 0 2px 6px rgba(0,0,0,0.1);
 }
 
-.vehicle-detail-container h1 {
-  font-size: 2rem;
-  margin-bottom: 1rem;
+.vehicle-detail-container h1,
+.vehicle-info h2 {
+  font-size: 1.8rem;
+  margin-bottom: 0.4rem;
   color: #00a0d6;
 }
 
-.vehicle-detail-container p {
-  font-size: 1rem;
-  margin-bottom: 0.6rem;
+.vehicle-detail-container h1 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
 }
 
-.vehicle-detail-container strong {
+.vehicle-detail-container p,
+.vehicle-info p {
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.vehicle-detail-container strong,
+.vehicle-info strong {
   color: #222;
 }
 
+.vehicle-detail-container p {
+  margin-bottom: 0.6rem;
+}
+
+/* Responsive vehicle detail layout */
 @media (max-width: 768px) {
+  .vehicle-detail,
   .vehicle-detail-container {
     grid-template-columns: 1fr;
   }
+  .vehicle-info {
+    text-align: center;
+  }
 }
 
-
-
-
-/* ===== Delorean Section  ===== */
+/* ===== Delorean Section ===== */
 .delorean-section {
   margin-top: 2rem;
   display: grid;
@@ -265,7 +338,6 @@ nav ul li a:hover {
   gap: 2rem;
 }
 
-/* Upgrades grid */
 .upgrades ul {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -348,84 +420,12 @@ nav ul li a:hover {
   margin-top: auto; 
 }
 
-
 /* ===== Footer ===== */
 footer {
   margin-top: 2rem;
   font-size: 0.8rem;
   text-align: center;
   color: #555;
-}
-
-/* ===== Form Styles ===== */
-form {
-  max-width: 400px;
-  margin: 20px auto;
-  padding: 15px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  background-color: #f9f9f9;
-}
-
-form label {
-  display: block;
-  margin-bottom: 8px;
-  font-weight: bold;
-}
-
-form input[type="text"],
-form input[type="email"],
-form input[type="password"] {
-  width: 100%;
-  padding: 8px;
-  margin-bottom: 15px;
-  border: 1px solid #bbb;
-  border-radius: 3px;
-  box-sizing: border-box;
-}
-
-form button {
-  background-color: #007bff;
-  color: white;
-  border: none;
-  padding: 10px 15px;
-  border-radius: 4px;
-  cursor: pointer;
-  font-size: 1rem;
-}
-
-form button:hover {
-  background-color: #0056b3;
-}
-
-/* ===== Error Message ===== */
-.error {
-  color: red;
-  font-size: 0.9rem;
-  margin-bottom: 10px;
-}
-
-/* ===== Flash Messages ===== */
-.flash-message {
-  padding: 10px;
-  margin-bottom: 15px;
-  border-radius: 5px;
-  text-align: center;
-}
-
-.flash-message.info {
-  background-color: #d9edf7;
-  color: #31708f;
-}
-
-.flash-message.success {
-  background-color: #dff0d8;
-  color: #3c763d;
-}
-
-.flash-message.error {
-  background-color: #f2dede;
-  color: #a94442;
 }
 
 /* ===== Login Styles ===== */
@@ -500,7 +500,7 @@ form button:hover {
     grid-template-columns: 1fr;
   }
 
-  /* Switch to a two-column */
+  /* Hero layout changes */
   .hero {
     display: flex;
     align-items: center;
@@ -530,7 +530,6 @@ form button:hover {
 
 /* ===== Extra small screens (phones) ===== */
 @media (max-width: 480px) {
-  
   .hero {
     display: flex;
     flex-direction: column;

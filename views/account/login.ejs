@@ -1,18 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title><%= title %></title>
-    <link rel="stylesheet" href="/css/styles.css">
-</head>
-<body>
+
     <div class="login-container">
         <h1><%= title %></h1>
 
         <!-- Flash -->
         <% if (notice && notice.length > 0) { %>
-            <div class="flash-message"><%= notice %></div>
+        <div class="flash-message">
+         <%= notice[0] %>
+        </div>
         <% } %>
 
         <!-- Login Form -->
@@ -31,5 +25,4 @@
         <p>No account? <a href="/account/register">Sign-up</a></p>
 
     </div>
-</body>
-</html>
+

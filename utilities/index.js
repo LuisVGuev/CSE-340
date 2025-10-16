@@ -9,24 +9,26 @@ const Util = {};
  * ************************** */
 Util.getNav = async function () {
   try {
-    const data = await invModel.getClassifications()
+    const data = await invModel.getClassifications();
     if (!data || !data.rows) {
-      console.error("⚠️ No classification data found in getNav()")
-      return '<ul><li><a href="/">Home</a></li></ul>'
+      console.error("⚠️ No classification data found in getNav()");
+      return '<ul><li><a href="/">Home</a></li></ul>';
     }
 
-    let list = '<ul>'
-    list += '<li><a href="/">Home</a></li>'
+    let list = '<ul>';
+    list += '<li><a href="/">Home</a></li>';
     data.rows.forEach((row) => {
-      list += `<li><a href="/inv/type/${row.classification_id}" title="See our inventory of ${row.classification_name} vehicles">${row.classification_name}</a></li>`
-    })
-    list += '</ul>'
-    return list
+      list += `<li><a href="/inv/type/${row.classification_id}" title="See our inventory of ${row.classification_name} vehicles">${row.classification_name}</a></li>`;
+    });
+    list += '<li><a href="/contact">Contact</a></li>';  
+    list += '</ul>';
+    return list;
   } catch (error) {
-    console.error("getNav error:", error)
-    return '<ul><li><a href="/">Home</a></li></ul>'
+    console.error("getNav error:", error);
+    return '<ul><li><a href="/">Home</a></li></ul>';
   }
-}
+};
+
 
 /* ***************************
  *  Build the classification grid HTML
@@ -50,7 +52,7 @@ Util.buildClassificationGrid = function (data) {
           <img src="${thumbnail}" alt="Image of ${vehicle.inv_make} ${vehicle.inv_model} on CSE Motors">
         </a>
         <div class="namePrice">
-          <hr />
+          <hr>
           <h2>
             <a href="/inv/detail/${vehicle.inv_id}" title="View ${vehicle.inv_make} ${vehicle.inv_model} details">
               ${vehicle.inv_make} ${vehicle.inv_model}

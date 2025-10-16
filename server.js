@@ -1,5 +1,5 @@
 /****************************************** 
- * CSE-340 server.js
+ * server.js
  * Primary server file for the application
  ******************************************/
 
@@ -17,6 +17,7 @@ const flash = require("connect-flash");
 const messages = require("express-messages");
 const expressLayouts = require("express-ejs-layouts");
 const bodyParser = require("body-parser");
+const contactRoutes = require('./routes/contactRoutes');
 
 /* ========================
  * Custom Modules
@@ -87,8 +88,8 @@ app.use((req, res, next) => {
       res.locals.loggedIn = true;
       res.locals.firstname = decoded.firstname;
       res.locals.account_type = decoded.account_type;
-      res.locals.decodedToken = decoded; // Esto es clave para acceso a account_id
-      req.user = decoded; // También puedes acceder desde controladores
+      res.locals.decodedToken = decoded;
+      req.user = decoded;
     } catch (err) {
       console.log("JWT error:", err.message);
       res.locals.loggedIn = false;
@@ -121,6 +122,8 @@ app.use(async (req, res, next) => {
 /* ========================
  * Route Definitions
  ======================== */
+app.use('/contact', contactRoutes); 
+
 app.get("/", utilities.handleErrors(baseController.buildHome));
 app.get("/inv/type/:classificationId", invController.buildByClassificationId);
 
