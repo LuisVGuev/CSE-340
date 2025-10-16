@@ -76,7 +76,7 @@ app.use(function (req, res, next) {
 });
 
 /* ========================
- * Middleware: Inject JWT login state into all views
+ * JWT login state into all views
  ======================== */
 const jwtSecret = process.env.JWT_SECRET || "defaultjwtsecret";
 app.use((req, res, next) => {
